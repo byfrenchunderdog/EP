@@ -73,10 +73,11 @@ body {
 .container{
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 20px;
     position: relative;
     display: grid;
     margin-bottom: 40px;
+  
     
 }
 .container2{
@@ -89,7 +90,7 @@ body {
 .container3{
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
     text-align: center;
    
@@ -219,7 +220,7 @@ audio::-webkit-media-controls-volume-control {
         </video>
     </div>
 </div>
-<div class="container">
+<div class="container">  
     <img src="cover.png" alt="Image 1" class="audio-image">
   
     <div class="container2"> 
@@ -255,7 +256,7 @@ audio::-webkit-media-controls-volume-control {
        
 
 <a href="https://www.buymeacoffee.com/byfrenchunderdog" target="_blank" style="background-color: #3454d7; color: white; font-size: 12px;
-padding: 10px 20px; text-decoration: none; border-radius: 7px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">JE SOUTIENS LE PROJET</a>
+padding: 6px 20px; text-decoration: none; border-radius: 7px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">JE SOUTIENS LE PROJET</a>
       
 
     </div>
@@ -287,6 +288,16 @@ padding: 10px 20px; text-decoration: none; border-radius: 7px; font-family: 'Luc
             });
         });
     });
+</script>
+<script>
+    function playVideo() {
+        var video = document.getElementById("myVideo");
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
 </script>
 
 
