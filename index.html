@@ -64,26 +64,20 @@ body {
 .navbar {
     background-color: rgb(31, 31, 31);
     height: 40px;
-    padding: 20px 0 ;
+
     opacity: 80%;
-    display: flex;
+    
    position: sticky;
 }
-.container3 p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 12px;
-  
-    cursor: default;
-    
 
-}
 .container{
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 100px;
     position: relative;
     display: grid;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
+    
 }
 .container2{
     justify-content: center;
@@ -120,12 +114,12 @@ body {
     
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 20px 0;
+    
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: rgb(31, 31, 31);
-    height: 40px;
+    height: 50px;
     padding: 10px 0 ;
     opacity: 80%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -211,49 +205,12 @@ audio::-webkit-media-controls-volume-control {
 
 
 
-/* Styles pour le menu hamburger */
-.menu-toggle {
-    display: block;
-    cursor: pointer;
-    padding: 10px;
-    width: 30px;
-    position: absolute;
-    cursor: default;
-}
 
-.menu-toggle span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    margin-bottom: 5px;
-}
-
-/* Styles pour le menu hamburger ouvert */
-.menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
 </style>
 </head>
 <body>
    
-    <nav class="navbar">
-     
-    <!--   <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>--> 
-  
-    </nav>
+    
 <div class="video-background">
     <div class="video-wrap">
         <video autoplay muted loop class="video-background" id="myVideo">
@@ -264,7 +221,7 @@ audio::-webkit-media-controls-volume-control {
 </div>
 <div class="container">
     <img src="cover.png" alt="Image 1" class="audio-image">
-    <div class="container3"> <p>BY FRENCH UNDERDOG</p></div>
+  
     <div class="container2"> 
     <div class="audio-player">
         
