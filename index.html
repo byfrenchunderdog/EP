@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BY FRENCH UNDERDOG</title>
+<style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.video-background {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: calc(100% + 200px); /* 150px de chaque côté */
+    min-height: calc(100% + 200px);
+    filter: blur(5px) grayscale(0.6);
+}
+
+.audio-player {
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 8px;
+   
+  
+}
+h2 {margin-bottom: 7px;}
+body {
+    background-color: black;
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(31, 31, 31);
+    height: 40px;
+    padding: 20px 0 ;
+    opacity: 80%;
+    display: flex;
+   position: sticky;
+}
+.container3 p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+  
+    cursor: default;
+    
+
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    position: relative;
+    display: grid;
+    margin-bottom: 70px;
+}
+.container2{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    
+}
+.container3{
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+   
+    z-index: 45;
+    
+}
+
+
+.audio-image {
+    
+    margin-bottom: 0px; 
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: #ffffff 2px 1px 15px;
+    left: 15%;
+    
+}
+
+.footer {
+    
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(31, 31, 31);
+    height: 40px;
+    padding: 10px 0 ;
+    opacity: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    cursor: default;
+}
+
+
+
+/* Style des boutons de lecture/pause, stop, etc. */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-stop-button {
+    background-color: #2a2a2aeb; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border-radius: 5px; /* Boutons ronds */
+    width: 30px; /* Largeur */
+    height: 30px; /* Hauteur */
+    font-size: 12px; /* Taille de la police */
+    margin-right: 10px; /* Espacement entre les boutons */
+}
+
+/* Style de la barre de progression */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline {
+    background-color: transparent; /* Fond transparent */
+    color: rgb(26, 26, 26); /* Couleur du texte */
+    width: 80px;
+}
+
+/* Style de la barre de progression remplie */
+audio::-webkit-media-controls-timeline {
+    height:1px; /* Hauteur de la barre de progression */
+    background-color: transparent; /* Couleur de fond */
+}
+
+/* Style de la barre de progression non remplie */
+audio::-webkit-media-controls-timeline::-webkit-media-slider-thumb {
+    background-color: white; /* Couleur du curseur */
+    border: none; /* Supprimer la bordure */
+    width: 2px; /* Largeur du curseur */
+    height: 2px; /* Hauteur du curseur */
+    border-radius: 50%; /* Curseur rond */
+}
+
+
+
+/* Modifier la couleur de fond du lecteur audio */
+audio::-webkit-media-controls-panel {
+    background-color: transparent; /* Couleur de fond avec opacité (noir avec 80% d'opacité) */
+}
+
+/* Modifier l'opacité des contrôles de lecture */
+audio::-webkit-media-controls {
+    opacity: 0.5; /* Opacité (70%) */
+}
+
+/* Modifier le border radius du lecteur audio */
+audio::-webkit-media-controls-panel {
+    border-radius: 15px; /* Par exemple, un border-radius de 10px */
+}
+
+/* Masquer les indications temporelles du lecteur audio */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
+/* Masquer l'indication de la vitesse de lecture du lecteur audio */
+audio::-webkit-media-controls-speed-selector {
+    display: none;
+    opacity: 0;
+    
+}
+
+/* Masquer l'indicateur de volume du lecteur audio */
+audio::-webkit-media-controls-volume-control {
+    display: none;
+}
+
+
+
+
+
+/* Styles pour le menu hamburger */
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    width: 30px;
+    position: absolute;
+    cursor: default;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 5px;
+}
+
+/* Styles pour le menu hamburger ouvert */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+</style>
+</head>
+<body>
+   
+    <nav class="navbar">
+     
+    <!--   <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>--> 
+  
+    </nav>
+<div class="video-background">
+    <div class="video-wrap">
+        <video autoplay muted loop class="video-background" id="myVideo">
+            <source src="cover.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+</div>
+<div class="container">
+    <img src="cover.png" alt="Image 1" class="audio-image">
+    <div class="container3"> <p>BY FRENCH UNDERDOG</p></div>
+    <div class="container2"> 
+    <div class="audio-player">
+        
+        <h2>Collision (Saba Hunter)</h2>
+        <audio controls class="audio-element" data-audio="collision">
+            <source src="collision.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="audio-player">
+       
+        <h2>Hameçon (Saba Hunter)</h2>
+        <audio controls class="audio-element" data-audio="hamecon">
+            <source src="hamecon.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div class="audio-player">
+      
+        <h2>No Nation (Saba Hunter)</h2>
+        <audio controls class="audio-element" data-audio="nonation">
+            <source src="nonation.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+
+    <div class="container3"> 
+       
+
+<a href="https://www.buymeacoffee.com/byfrenchunderdog" target="_blank" style="background-color: #3454d7; color: white; font-size: 12px;
+padding: 10px 20px; text-decoration: none; border-radius: 7px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">JE SOUTIENS LE PROJET</a>
+      
+
+    </div>
+
+
+
+</div>
+</div>
+<footer class="footer">
+    <p>© By French Underdog (EP) - écrit et interprété pas Saba Hunter.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const audioElements = document.querySelectorAll('.audio-element');
+        
+        audioElements.forEach(function(audioElement) {
+            audioElement.addEventListener('play', function(event) {
+                const currentAudioName = event.target.dataset.audio;
+
+                audioElements.forEach(function(otherAudioElement) {
+                    const otherAudioName = otherAudioElement.dataset.audio;
+
+                    if (otherAudioElement !== event.target && otherAudioName !== currentAudioName) {
+                        otherAudioElement.pause();
+                        otherAudioElement.currentTime = 0;
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
