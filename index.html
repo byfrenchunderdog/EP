@@ -56,9 +56,14 @@
     position: relative;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 8px;
-   
-  
 }
+
+/* Styles spécifiques à Safari */
+@media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
+    .audio-player {
+        margin-left: 20px;
+    }
+}}
 h2 {margin-bottom: 7px;}
 body {
     background-color: black;
@@ -176,6 +181,7 @@ audio::-webkit-media-controls-timeline::-webkit-media-slider-thumb {
 /* Modifier la couleur de fond du lecteur audio */
 audio::-webkit-media-controls-panel {
     background-color: transparent; /* Couleur de fond avec opacité (noir avec 80% d'opacité) */
+    
 }
 
 /* Modifier l'opacité des contrôles de lecture */
@@ -185,7 +191,8 @@ audio::-webkit-media-controls {
 
 /* Modifier le border radius du lecteur audio */
 audio::-webkit-media-controls-panel {
-    border-radius: 15px; /* Par exemple, un border-radius de 10px */
+    border-radius: 15px; 
+   /* Par exemple, un border-radius de 10px */
 }
 
 /* Masquer les indications temporelles du lecteur audio */
@@ -222,7 +229,7 @@ z-index: 60;
 
 
 </style>
-
+<img src="mpam.PNG" class="mpam"
 </head>
 <body>
    
@@ -258,8 +265,8 @@ z-index: 60;
             Your browser does not support the audio element.
         </audio>
     </div>
-
-
+    </div>
+   
     <div class="container3"> 
        
 
